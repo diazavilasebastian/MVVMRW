@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.9.1)
+  - iOSMovieDB (0.0.1):
+    - Alamofire (~> 4.9)
+  - iOSUI (0.0.6)
+
+DEPENDENCIES:
+  - iOSMovieDB
+  - iOSUI
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - iOSMovieDB
+    - iOSUI
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  iOSMovieDB: 57188b0af064ef1d16d658c2f437713dc1ecb92f
+  iOSUI: 5e52986420e4b6a77f9c81b5aaacd9bdef0e8861
+
+PODFILE CHECKSUM: 0e69b5bcb26c152733dc5ff228c830bfba512235
+
+COCOAPODS: 1.8.4

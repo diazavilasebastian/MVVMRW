@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190EDF3DECDBB41889C86BD2 /* Pods_MVVMRW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB59463DA6C76928588C90A9 /* Pods_MVVMRW.framework */; };
 		60481AF82471C7390051CB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60481AF72471C7390051CB04 /* AppDelegate.swift */; };
 		60481AFA2471C7390051CB04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60481AF92471C7390051CB04 /* SceneDelegate.swift */; };
 		60481AFC2471C7390051CB04 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60481AFB2471C7390051CB04 /* MoviesViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1549CA7A00F82F18816EC7C4 /* Pods-MVVMRW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMRW.release.xcconfig"; path = "Target Support Files/Pods-MVVMRW/Pods-MVVMRW.release.xcconfig"; sourceTree = "<group>"; };
 		60481AF42471C7390051CB04 /* MVVMRW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMRW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60481AF72471C7390051CB04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60481AF92471C7390051CB04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		60481B002471C73B0051CB04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60481B032471C73B0051CB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60481B052471C73B0051CB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB59463DA6C76928588C90A9 /* Pods_MVVMRW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMRW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E64933C5ED956121F3F1CBD7 /* Pods-MVVMRW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMRW.debug.xcconfig"; path = "Target Support Files/Pods-MVVMRW/Pods-MVVMRW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190EDF3DECDBB41889C86BD2 /* Pods_MVVMRW.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		063EAF6653DD87C4B390B323 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB59463DA6C76928588C90A9 /* Pods_MVVMRW.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DCE922CB5C48FD69CA79D59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E64933C5ED956121F3F1CBD7 /* Pods-MVVMRW.debug.xcconfig */,
+				1549CA7A00F82F18816EC7C4 /* Pods-MVVMRW.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		60481AEB2471C7390051CB04 = {
 			isa = PBXGroup;
 			children = (
 				60481AF62471C7390051CB04 /* MVVMRW */,
 				60481AF52471C7390051CB04 /* Products */,
+				3DCE922CB5C48FD69CA79D59 /* Pods */,
+				063EAF6653DD87C4B390B323 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60481B082471C73B0051CB04 /* Build configuration list for PBXNativeTarget "MVVMRW" */;
 			buildPhases = (
+				5A6FC0FD3A066119827D24F8 /* [CP] Check Pods Manifest.lock */,
 				60481AF02471C7390051CB04 /* Sources */,
 				60481AF12471C7390051CB04 /* Frameworks */,
 				60481AF22471C7390051CB04 /* Resources */,
+				D6498B0400C3A7B9EE99BF3E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +155,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A6FC0FD3A066119827D24F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVMRW-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6498B0400C3A7B9EE99BF3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMRW/Pods-MVVMRW-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVVMRW/Pods-MVVMRW-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVVMRW/Pods-MVVMRW-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60481AF02471C7390051CB04 /* Sources */ = {
@@ -270,6 +339,7 @@
 		};
 		60481B092471C73B0051CB04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E64933C5ED956121F3F1CBD7 /* Pods-MVVMRW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +357,7 @@
 		};
 		60481B0A2471C73B0051CB04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1549CA7A00F82F18816EC7C4 /* Pods-MVVMRW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
