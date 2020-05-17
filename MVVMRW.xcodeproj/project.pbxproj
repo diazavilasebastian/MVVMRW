@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		60481AFC2471C7390051CB04 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60481AFB2471C7390051CB04 /* MoviesViewController.swift */; };
 		60481B012471C73B0051CB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60481B002471C73B0051CB04 /* Assets.xcassets */; };
 		60481B042471C73B0051CB04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60481B022471C73B0051CB04 /* LaunchScreen.storyboard */; };
+		60481B0E2471CE490051CB04 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60481B0D2471CE490051CB04 /* MovieViewController.swift */; };
+		60481B112471CE680051CB04 /* MoviesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60481B102471CE680051CB04 /* MoviesDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		60481B002471C73B0051CB04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60481B032471C73B0051CB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60481B052471C73B0051CB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60481B0D2471CE490051CB04 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		60481B102471CE680051CB04 /* MoviesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDataSource.swift; sourceTree = "<group>"; };
 		CB59463DA6C76928588C90A9 /* Pods_MVVMRW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMRW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64933C5ED956121F3F1CBD7 /* Pods-MVVMRW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMRW.debug.xcconfig"; path = "Target Support Files/Pods-MVVMRW/Pods-MVVMRW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,7 +58,6 @@
 				E64933C5ED956121F3F1CBD7 /* Pods-MVVMRW.debug.xcconfig */,
 				1549CA7A00F82F18816EC7C4 /* Pods-MVVMRW.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,14 +82,40 @@
 		60481AF62471C7390051CB04 /* MVVMRW */ = {
 			isa = PBXGroup;
 			children = (
+				60481B122471CF840051CB04 /* ViewModel */,
+				60481B0F2471CE540051CB04 /* DataSource */,
+				60481B0B2471CE2C0051CB04 /* Scenes */,
 				60481AF72471C7390051CB04 /* AppDelegate.swift */,
 				60481AF92471C7390051CB04 /* SceneDelegate.swift */,
-				60481AFB2471C7390051CB04 /* MoviesViewController.swift */,
 				60481B002471C73B0051CB04 /* Assets.xcassets */,
 				60481B022471C73B0051CB04 /* LaunchScreen.storyboard */,
 				60481B052471C73B0051CB04 /* Info.plist */,
 			);
 			path = MVVMRW;
+			sourceTree = "<group>";
+		};
+		60481B0B2471CE2C0051CB04 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				60481AFB2471C7390051CB04 /* MoviesViewController.swift */,
+				60481B0D2471CE490051CB04 /* MovieViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		60481B0F2471CE540051CB04 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				60481B102471CE680051CB04 /* MoviesDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		60481B122471CF840051CB04 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +232,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60481B112471CE680051CB04 /* MoviesDataSource.swift in Sources */,
 				60481AFC2471C7390051CB04 /* MoviesViewController.swift in Sources */,
 				60481AF82471C7390051CB04 /* AppDelegate.swift in Sources */,
 				60481AFA2471C7390051CB04 /* SceneDelegate.swift in Sources */,
+				60481B0E2471CE490051CB04 /* MovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
