@@ -22,8 +22,7 @@ class MovieDataSource {
     }
 
     func getMovie(id: Int) -> MovieResume? {
-        return nil
+        return movies.filter { $0.id == id }.first
     }
-
 
 }
