@@ -9,6 +9,8 @@
 import Foundation
 import iOSMovieDB
 import UIKit
+import SDWebImage
+import iOSUI
 
 protocol RouterNavigation {
     var navigation: UINavigationController? { get }
@@ -53,7 +55,13 @@ extension RouterMovies: RouterMovieFlow {
     }
 
     func goToDetails(movieResumen: MovieResume) {
-        debugPrint("Go to \(movieResumen.originalTitle)")
+        guard let strongUrl = movieResumen.urlPoster?.absoluteString else{ return }
+        if let image = SDImageCache.shared.imageFromDiskCache(forKey: strongUrl) {
+            let viewModel = MovieViewModel(movie: movieResumen, image: image)
+            let detail = MovieViewController(viewModel: viewModel)
+            self.navigation?.show(detail, sender: nil)
+        }
+
     }
 
 }
