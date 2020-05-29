@@ -1,24 +1,30 @@
 PODS:
   - Alamofire (4.9.1)
-  - iOSMovieDB (0.0.3):
+  - iOSMovieDB (0.0.4):
     - Alamofire (~> 4.9)
-  - iOSUI (0.0.6)
+  - iOSUI (0.0.7)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
 
 DEPENDENCIES:
-  - iOSMovieDB (~> 0.0.3)
-  - iOSUI
+  - iOSMovieDB (~> 0.0.4)
+  - iOSUI (~> 0.0.7)
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - iOSMovieDB
     - iOSUI
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  iOSMovieDB: 5dcd72a8abeab810dbc95f6feccc8b797357a98e
-  iOSUI: 5e52986420e4b6a77f9c81b5aaacd9bdef0e8861
+  iOSMovieDB: c57c649ca0ad991f4f6efe4446c918c127211cbc
+  iOSUI: 3f8d9f11c3f3cef6529b048d21bccfa7267a54cf
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
 
-PODFILE CHECKSUM: b7fc664640126b8634e43b1865e533a9cc079d5e
+PODFILE CHECKSUM: 6547232417fc8e7320a285a3b73f5e9bda279209
 
 COCOAPODS: 1.8.4

@@ -12,7 +12,7 @@ import UIKit
 class MoviesCollectionView: UIView {
 
     lazy var collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero)
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -37,14 +37,6 @@ class MoviesCollectionView: UIView {
         self.addSubview(collectionView)
     }
 
-    func delegateCollection(_ delegate: UICollectionViewDelegate) {
-        self.collectionView.delegate = delegate
-    }
-
-    func daatasourceCollection (_ datasource: UICollectionViewDataSource) {
-        self.collectionView.dataSource = datasource
-    }
-
     func setupConstraints() {
         NSLayoutConstraint.activate([
             .init(item: collectionView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0),
@@ -55,7 +47,6 @@ class MoviesCollectionView: UIView {
     }
 
     func configView() {
-
+        self.collectionView.backgroundColor = .black
     }
-
 }
