@@ -20,6 +20,7 @@ protocol MoviesViewModel {
 struct MoviesControllerViewModel: MoviesViewModel {
     var provider: MovieProvider
     var dataSource: MovieDataSource
+    var router: RouterMovies
 
     func configure(view: MoviesViewController) {
         view.mainView.collectionView.delegate = view

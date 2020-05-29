@@ -21,6 +21,7 @@ class MoviesViewController: UIViewController {
 
     private var provider: ProviderProtocol
     private var dataSource: MovieDataSource
+    private var navigation: RouterMovies
 
     private var fetchingData: Bool = false
     private var page: Int = 1
@@ -28,6 +29,7 @@ class MoviesViewController: UIViewController {
     init(viewModel: MoviesControllerViewModel) {
         self.provider = viewModel.provider
         self.dataSource = viewModel.dataSource
+        self.navigation = viewModel.router
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -66,7 +68,9 @@ class MoviesViewController: UIViewController {
 extension MoviesViewController: UICollectionViewDelegate, UIScrollViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movieResume = dataSource.getMovie(index: indexPath.row)
+        if let movieResume = dataSource.getMovie(index: indexPath.row) {
+            navigation.goToDetails(movieResumen: movieResume)
+        }
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

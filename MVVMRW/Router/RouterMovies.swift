@@ -37,7 +37,9 @@ class RouterMovies: RouterNavigation {
 
     func start() {
         guard let strongNavigation = self.navigation else { return }
-        let viewModel = MoviesControllerViewModel(provider: provider, dataSource: MovieDataSource())
+        let viewModel = MoviesControllerViewModel(provider: provider,
+                                                  dataSource: MovieDataSource(),
+                                                  router: self)
         let moviesController = MoviesViewController(viewModel: viewModel)
         strongNavigation.setNavigationBarHidden(true, animated: false)
         strongNavigation.setViewControllers([moviesController], animated: false)
@@ -51,7 +53,7 @@ extension RouterMovies: RouterMovieFlow {
     }
 
     func goToDetails(movieResumen: MovieResume) {
-
+        debugPrint("Go to \(movieResumen.originalTitle)")
     }
 
 }
