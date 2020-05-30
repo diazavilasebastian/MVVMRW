@@ -57,8 +57,8 @@ extension RouterMovies: RouterMovieFlow {
     func goToDetails(movieResumen: MovieResume) {
         guard let strongUrl = movieResumen.urlPoster?.absoluteString else{ return }
         if let image = SDImageCache.shared.imageFromDiskCache(forKey: strongUrl) {
-            let viewModel = MovieViewModel(movie: movieResumen, image: image)
-            let detail = MovieViewController(viewModel: viewModel)
+            let viewModel = MovieViewModelResumen(movie: movieResumen, image: image)
+            let detail = MovieViewController(viewModel: viewModel, provider: self.provider)
             self.navigation?.show(detail, sender: nil)
         }
 

@@ -8,14 +8,17 @@
 
 import Foundation
 import iOSUI
+import iOSMovieDB
 
 protocol MovieViewModelProtocol {
     var title: String { get }
     var image: UIImage { get }
     var overview: String { get }
-    var popularity: Double { get }  
-}
+    var popularity: String { get }
+    var idMovie: Int { get }
 
+    func configure(view: MovieDetailView)
+}
 
 class MovieViewController: UIViewController {
 
@@ -23,15 +26,17 @@ class MovieViewController: UIViewController {
         let view = MovieDetailView(title: self.viewModel.title,
                                    image: self.viewModel.image,
                                    frame: .zero)
-        view.
         return view
     }()
 
-    var viewModel: MovieViewModel
+    var viewModel: MovieViewModelProtocol
+    var provider: MovieProvider
 
-    init(viewModel: MovieViewModel) {
+    init(viewModel: MovieViewModelProtocol, provider: MovieProvider) {
         self.viewModel = viewModel
+        self.provider = provider
         super.init(nibName: nil, bundle: nil)
+        viewModel.configure(view: mainView)
     }
 
     @available(*,unavailable)
@@ -44,6 +49,7 @@ class MovieViewController: UIViewController {
         self.configNavigation()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.view = mainView
+        fetchMovieDetail()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,6 +62,18 @@ class MovieViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+
+    func fetchMovieDetail() {
+        provider.getMovie(id: viewModel.idMovie) { result in
+            switch result {
+            case .success(let detail):
+                let viewModel = MovieDetailViewModel(movie: detail)
+                viewModel.configure(view: self.mainView)
+            default:
+                break
+            }
+        }
     }
 
 }
